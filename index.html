@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     
+    <style type="text/css">
+ .text-progress{
+    position: absolute;
+    font-size: 14px;
+    font-family: 'segoe ui';
+    top: 45%;
+    color: #eee;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+ }
+  .text-progress .overlay{
+      position:absolute;
+      color:#000;
+      left:0px;
+      top:0px;
+      width:0%;
+      overflow:hidden;
+    
+ }
+  .height-fix{
+      height:100vh;
+      position:relative;
+
+  }
+    </style>
+</head>
+<body>
+    <div class="height-fix" style="background:#09c;">
+
+    </div>
+    <div class="height-fix" id="contentscrollable">
+        <div class="text-progress">
+            Simplicity is the ultimate sophistication. Simplicity is the ultimate sophistication. Simplicity is the ultimate sophistication.
+            <div class="overlay" id="myBar">
+                Simplicity is the ultimate sophistication. Simplicity is the ultimate sophistication. Simplicity is the ultimate sophistication.
+            </div>
+        </div>
+    </div>
+
+<script>
+	window.onscroll = function() {myFunction()};
+
+	function myFunction() {		
+	  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	  if($(document).scrollTop() >= 200){
+		  var scrolled = ((winScroll - 200) / height) * 100;
+		  document.getElementById("myBar").style.width = scrolled + "%";
+		}
+	  }
+	  
+</script>
+ 
+</body>
+</html>
